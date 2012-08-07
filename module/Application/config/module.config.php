@@ -31,10 +31,11 @@ return array(
                     'default' => array(
                         'type'    => 'Segment',
                         'options' => array(
-                            'route'    => '/[:controller[/:action]]',
+                            'route'    => '/[:controller[/:action[/:lang]]]',
                             'constraints' => array(
                                 'controller' => '[a-zA-Z][a-zA-Z0-9_-]*',
                                 'action'     => '[a-zA-Z][a-zA-Z0-9_-]*',
+                                'lang'       => '[a-zA-Z_]*'
                             ),
                             'defaults' => array(
                             ),
@@ -47,6 +48,9 @@ return array(
     'service_manager' => array(
         'factories' => array(
             'translator' => 'Zend\I18n\Translator\TranslatorServiceFactory',
+        ),
+        'services' => array(
+            'session' => new Zend\Session\Container('zf2tutorial'),
         ),
     ),
     'translator' => array(

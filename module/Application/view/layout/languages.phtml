@@ -1,0 +1,8 @@
+<select id="select01" style="margin-top:5px; width: 100px"
+        OnChange="javascript:$.ajax({url: this.value, success: function(){location.reload();}});">
+    <?php
+    foreach ($this->lang as $key => $value) { 
+        $selected = ($value === $this->selected) ? 'selected' : '';
+        echo "<option value=\"/application/index/change/$value\" $selected>$key</option>";
+    } ?>
+</select>
