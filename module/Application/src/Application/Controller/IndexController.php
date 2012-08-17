@@ -12,14 +12,4 @@ class IndexController extends AbstractActionController
         return new ViewModel();
     }
     
-    public function changeAction()
-    {
-        $lang = $this->params('lang');
-        if (!empty($lang)) {
-            $session = $this->getServiceLocator()->get('session');
-            $session->lang = $lang;
-        }    
-        return $this->getResponse();
-
-    }
 }
