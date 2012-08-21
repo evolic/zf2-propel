@@ -10,7 +10,7 @@ use Album\Form\AlbumForm;
 class AlbumController extends AbstractActionController
 {
     protected $albumTable;
-   
+
     public function indexAction()
     {
         return new ViewModel(array(
@@ -51,7 +51,7 @@ class AlbumController extends AbstractActionController
         $form = new AlbumForm();
         $form->bind($album);
         $form->get('submit')->setAttribute('value', 'Edit');
-        
+
         $request = $this->getRequest();
         if ($request->isPost()) {
             $form->setData($request->getPost());
@@ -101,5 +101,5 @@ class AlbumController extends AbstractActionController
             $this->albumTable = $sm->get('Album\Model\AlbumTable');
         }
         return $this->albumTable;
-    }    
+    }
 }

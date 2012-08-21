@@ -1,12 +1,16 @@
 <select id="select01" style="margin-top:5px; width: 100px"
-        OnChange="javascript:window.location.replace(changeLang(this.value));">
-    <?php
-    foreach ($this->lang as $key => $value) { 
-        $selected = ($value === $this->selected) ? 'selected' : '';
-        echo "<option value=\"$value\" $selected>$key</option>";
-    }?>
+        onChange="javascript:window.location.replace(changeLang(this.value));">
+    <?php foreach ($this->lang as $key => $value) {
+        $selected = ($value === $this->selected) ? ' selected' : '';
+        printf(
+            '<option value="%s"%s>%s</option>',
+            $this->escapeHtmlAttr($value),
+            $selected,
+            $this->escapeHtml($key)
+        );
+    } ?>
 </select>
-<script>
+<script language="JavaScript">
     function changeLang(lang) {
         var newUrl = location.href.replace(/[a-z]{2}-[A-Z]{2}/,lang);
         if (newUrl != location.href) {

@@ -5,7 +5,7 @@ return array(
             'Album\Controller\Album' => 'Album\Controller\AlbumController',
         ),
     ),
-    
+
     'router' => array(
         'routes' => array(
             'album' => array(
