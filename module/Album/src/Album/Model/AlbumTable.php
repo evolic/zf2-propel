@@ -1,5 +1,5 @@
 <?php
-
+// module/Album/src/Album/Model/AlbumTable.php:
 namespace Album\Model;
 
 use Zend\Db\TableGateway\TableGateway;
@@ -53,5 +53,4 @@ class AlbumTable
     {
         $this->tableGateway->delete(array('id' => $id));
     }
-
 }

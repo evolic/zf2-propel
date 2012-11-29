@@ -1,5 +1,4 @@
 <?php
-
 namespace Album;
 
 use Album\Model\Album;
