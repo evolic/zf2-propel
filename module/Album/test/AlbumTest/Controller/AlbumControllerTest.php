@@ -10,6 +10,7 @@ use Zend\Mvc\Router\RouteMatch;
 use PHPUnit_Framework_TestCase;
 use AlbumTest\Bootstrap;
 use Zend\Mvc\Router\Http\TreeRouteStack as HttpRouter;
+
 class AlbumControllerTest extends PHPUnit_Framework_TestCase
 {
     protected $controller;
@@ -37,7 +38,6 @@ class AlbumControllerTest extends PHPUnit_Framework_TestCase
         $this->controller->setServiceLocator($serviceManager);
     }
 
-
     public function testAddActionCanBeAccessed()
     {
         $this->routeMatch->setParam('action', 'add');
@@ -57,7 +57,7 @@ class AlbumControllerTest extends PHPUnit_Framework_TestCase
         $this->assertEquals(302, $response->getStatusCode());
     }
 
-   public function testEditActionCanBeAccessed()
+    public function testEditActionCanBeAccessed()
     {
         $this->routeMatch->setParam('action', 'edit');
         $result   = $this->controller->dispatch($this->request);
@@ -79,5 +79,4 @@ class AlbumControllerTest extends PHPUnit_Framework_TestCase
     {
         $this->assertInstanceOf('Album\Model\AlbumTable', $this->controller->getAlbumTable());
     }
-
 }

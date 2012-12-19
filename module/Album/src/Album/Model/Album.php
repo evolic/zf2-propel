@@ -1,5 +1,5 @@
 <?php
-// module/Album/src/Album/Model/Album.php:
+
 namespace Album\Model;
 
 use Zend\InputFilter\Factory as InputFactory;
