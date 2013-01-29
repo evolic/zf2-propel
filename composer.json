@@ -9,6 +9,9 @@
     "homepage": "http://framework.zend.com/",
     "require": {
         "php": ">=5.3.3",
-        "zendframework/zendframework": "dev-master"
+        "zendframework/zendframework": "*"
+    },
+    "require-dev": {
+      "phpunit/phpunit": "~3.7"
     }
 }
