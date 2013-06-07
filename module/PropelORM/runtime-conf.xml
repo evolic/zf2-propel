@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+ <log>
+  <ident>zf2-propel</ident>
+  <level>7</level>
+ </log>
+ <propel>
+  <datasources default="zf2tutorial-blog">  
+   <datasource id="zf2tutorial-blog">
+    <adapter>mysql</adapter>    
+    <connection>
+     <dsn>mysql:host=localhost;dbname=zf2tutorial-blog</dsn>
+     <user>root</user>
+     <password></password>
+    </connection>    
+   </datasource>   
+  </datasources> 
+ </propel>
+</config>

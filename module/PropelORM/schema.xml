@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database name="zf2tutorial-blog" defaultIdMethod="native" namespace="PropelORM\Model">
+  <table name="songs">
+    <column name="id" type="INTEGER" primaryKey="true" required="true" autoIncrement="true"/>
+    <column name="album_id" type="INTEGER" required="true"/>
+    <column name="position" type="SMALLINT" required="true"/>
+    <column name="name" type="VARCHAR" size="64" required="true"/>
+    <column name="duration" type="TIME" required="true"/>
+    <column name="disc" type="SMALLINT" required="true"/>
+    <foreign-key foreignTable="album" name="song2album">
+      <reference local="album_id" foreign="id"/>
+    </foreign-key>
+  </table>
+  <table name="album">
+    <column name="id" type="INTEGER" primaryKey="true" required="true" autoIncrement="true"/>
+    <column name="artist" type="VARCHAR" size="100" required="true"/>
+    <column name="title" type="VARCHAR" size="100" required="true"/>
+    <column name="discs" type="SMALLINT" required="true"/>
+  </table>
+</database>

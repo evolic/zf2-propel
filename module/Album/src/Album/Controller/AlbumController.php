@@ -4,17 +4,15 @@ namespace Album\Controller;
 
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
-use Album\Model\Album;
 use Album\Form\AlbumForm;
+use PropelORM\Model\AlbumQuery;
 
 class AlbumController extends AbstractActionController
 {
-    protected $albumTable;
-
     public function indexAction()
     {
         return new ViewModel(array(
-            'albums' => $this->getAlbumTable()->fetchAll(),
+            'albums' => AlbumQuery::create()->find(),
         ));
     }
 
