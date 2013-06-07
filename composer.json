@@ -4,12 +4,19 @@
     "license": "BSD-3-Clause",
     "keywords": [
         "framework",
-        "zf2"
+        "zf2",
+        "propel orm",
+        "doctrine 2 orm",
+        "tutorial",
+        "firephp"
     ],
     "homepage": "http://framework.zend.com/",
     "require": {
         "php": ">=5.3.3",
-        "zendframework/zendframework": "*"
+        "zendframework/zendframework": ">=2.1",
+        "propel/propel1": "1.6.*",
+        "craftyshadow/propel-equalnest-behavior": "dev-master",
+        "firephp/firephp-core" : "dev-master"
     },
     "require-dev": {
       "phpunit/phpunit": "~3.7"
