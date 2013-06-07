@@ -17,4 +17,16 @@
     <column name="title" type="VARCHAR" size="100" required="true"/>
     <column name="discs" type="SMALLINT" required="true"/>
   </table>
+
+  <table name="person">
+    <column name="id" required="true" primaryKey="true" autoIncrement="true" type="INTEGER" />
+    <column name="name" type="VARCHAR" required="true" />
+  </table>
+
+  <table name="friend">
+    <behavior name="equal_nest">
+      <parameter name="parent_table" value="person" />
+    </behavior>
+    <!-- you do not need to specify any colums for the "friend" table, the behavior will add them automatically -->
+  </table>
 </database>

@@ -39,5 +39,40 @@ CREATE TABLE `album`
     PRIMARY KEY (`id`)
 ) ENGINE=InnoDB;
 
+-- ---------------------------------------------------------------------
+-- person
+-- ---------------------------------------------------------------------
+
+DROP TABLE IF EXISTS `person`;
+
+CREATE TABLE `person`
+(
+    `id` INTEGER NOT NULL AUTO_INCREMENT,
+    `name` VARCHAR(255) NOT NULL,
+    PRIMARY KEY (`id`)
+) ENGINE=InnoDB;
+
+-- ---------------------------------------------------------------------
+-- friend
+-- ---------------------------------------------------------------------
+
+DROP TABLE IF EXISTS `friend`;
+
+CREATE TABLE `friend`
+(
+    `person_1` INTEGER NOT NULL,
+    `person_2` INTEGER NOT NULL,
+    PRIMARY KEY (`person_1`,`person_2`),
+    INDEX `FI_son_2` (`person_2`),
+    CONSTRAINT `person_1`
+        FOREIGN KEY (`person_1`)
+        REFERENCES `person` (`id`)
+        ON DELETE CASCADE,
+    CONSTRAINT `person_2`
+        FOREIGN KEY (`person_2`)
+        REFERENCES `person` (`id`)
+        ON DELETE CASCADE
+) ENGINE=InnoDB;
+
 # This restores the fkey checks, after having unset them earlier
 SET FOREIGN_KEY_CHECKS = 1;
